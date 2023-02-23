@@ -7,7 +7,7 @@ pipeline {
     stages {
         stage ('git pull') {
             steps {
-                sh"${GIT_CREDENTIALS}"
+                sh'${GIT_CREDENTIALS}'
                 checkout([$class: 'GitSCM', branches: [[name: '*/master']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/naveenao/kubernetes']]])
             }
         }
@@ -20,9 +20,8 @@ pipeline {
         }
         stage ('push image to docker hub') {
              steps{
-                sh"${DOCKER_CREDENTIALS}"
                 script{
-                    sh 'docker login'
+                    sh 'docker login ${DOCKER_CREDENTIALS}'
                     sh 'docker push naveenao/customdockerimage'
                 }
             }
