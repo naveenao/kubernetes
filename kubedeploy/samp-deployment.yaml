@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: webserv-deploy
+  name: webapp-deploy
   labels:
     app: sambappe
 spec:
