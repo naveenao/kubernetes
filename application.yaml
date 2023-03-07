@@ -8,14 +8,15 @@ spec:
   source:
     repoURL: https://github.com/naveenao/kubernetes.git
     targetRevision: HEAD
+    path: myapp-argocd
   destination:
     server: https://kubernetes.default.svc
-    namespace: sambappe
+    namespace: myapp-argocd
 
   syncPolicy:
     syncOptions:
     - CreateNamespace=true
-    
+
     automated:
       selfHeal: true
       prune: true
