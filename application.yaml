@@ -8,7 +8,7 @@ spec:
   source:
     repoURL: https://github.com/naveenao/kubernetes.git
     targetRevision: HEAD
-    path: myapp-argocd
+    path: .
   destination:
     server: https://kubernetes.default.svc
     namespace: myapp-argocd
